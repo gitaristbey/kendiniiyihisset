@@ -18,20 +18,14 @@ document.getElementById('surpriseBtn').addEventListener('click', function() {
     document.getElementById('message').classList.remove('hidden');
 });
 
-// Uçan kalpler oluşturma
-const heartsContainer = document.querySelector('.hearts');
-
 function createHeart() {
-    const heart = document.createElement('div');
-    heart.classList.add('heart');
-    heart.style.left = Math.random() * 100 + "vw"; // Kalplerin rastgele yatay konumda başlaması
-    heart.style.animationDuration = Math.random() * 5 + 5 + "s"; // Farklı hızlarda uçmalarını sağla
-    heartsContainer.appendChild(heart);
-
+    const heartContainer = document.getElementById("heartContainer");
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+    heartContainer.appendChild(heart);
     setTimeout(() => {
-        heart.remove(); // Animasyon bitince kalbi sil
-    }, 10000); // 10 saniye sonra kaldır
+        heart.remove();
+    }, 5000);
 }
-
-// Her 1 saniyede bir yeni bir kalp oluştur
-setInterval(createHeart, 1000);
