@@ -18,6 +18,7 @@ document.getElementById('surpriseBtn').addEventListener('click', function() {
     document.getElementById('message').classList.remove('hidden');
 });
 
+// Kalplerin yukarı doğru hareket etmesi
 function createHeart() {
     const heartContainer = document.getElementById("heartContainer");
     const heart = document.createElement("div");
@@ -29,3 +30,5 @@ function createHeart() {
         heart.remove();
     }, 5000);
 }
+
+setInterval(createHeart, 300);
