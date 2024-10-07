@@ -18,17 +18,17 @@ document.getElementById('surpriseBtn').addEventListener('click', function() {
     document.getElementById('message').classList.remove('hidden');
 });
 
-// Kalplerin yukarı doğru hareket etmesi
 function createHeart() {
     const heartContainer = document.getElementById("heartContainer");
     const heart = document.createElement("div");
     heart.className = "heart";
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+    heart.style.left = Math.random() * 100 + "vw"; // Kalp, rastgele bir yatay konumda ortaya çıkacak
+    heart.style.animationDuration = Math.random() * 2 + 3 + "s"; // Kalbin uçma süresi rastgele olacak
     heartContainer.appendChild(heart);
     setTimeout(() => {
-        heart.remove();
+        heart.remove(); // 5 saniye sonra kalbi kaldır
     }, 5000);
 }
 
-setInterval(createHeart, 300);
+setInterval(createHeart, 300); // Her 300 milisaniyede bir kalp oluştur
+
